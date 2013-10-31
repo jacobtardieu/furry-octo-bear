@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:jaxws="http://cxf.apache.org/jaxws" xmlns:cxf="http://cxf.apache.org/core"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/jaxrs
+http://cxf.apache.org/schemas/jaxrs.xsd
+http://cxf.apache.org/jaxws
+http://cxf.apache.org/schemas/jaxws.xsd
+http://cxf.apache.org/core 
+      http://cxf.apache.org/schemas/core.xsd">
+
+	<!-- do not use import statements if CXFServlet init parameters link to 
+		this beans.xml -->
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<jaxrs:server id="testChap10" address="/">
+		<jaxrs:serviceBeans>
+			<ref bean="chap10Compteur" />
+		</jaxrs:serviceBeans>
+		<jaxrs:features>
+			<cxf:logging />
+		</jaxrs:features>
+		<jaxrs:providers>
+			<ref bean="transaction" />
+			<ref bean="cacheServeur" />
+			<ref bean="atomicite" />
+
+		</jaxrs:providers>
+	</jaxrs:server>
+
+	<bean id="chap10Compteur" class="chap10.modele.Compteur" />
+
+	<bean id="transaction" class="chap10.infrastructure.RealiserTransactionOptimiste" />
+
+	<bean id="cacheServeur" class="chap10.infrastructure.Cacher" />
+
+	<bean id="atomicite" class="chap10.infrastructure.InteragirAtomiquement" />
+</beans>
+
