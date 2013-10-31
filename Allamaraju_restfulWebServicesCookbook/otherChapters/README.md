@@ -75,14 +75,6 @@ si le cache n'est pas vide, la réponse est  faite
 immédiatement ; si le cache est vide, une requête n'est pas filtrée mais
 permet de remplir le cache avec sa réponse. 
 
-- AjouterVersionEnTete (client)
-Côté serveur, il est possible de sauvegarder la réponse dans un cache.
-L'effet d'une requête PUT est de vider le cache.
-Pour une requête GET, 
-si le cache n'est pas vide, la réponse est  faite
-immédiatement ; si le cache est vide, une requête n'est pas filtrée mais
-permet de remplir le cache avec sa réponse. 
-
 - InteragirAtomiquement (serveur)
 Ce filtre garantit que chaque requête est traitée de manière atomique (indivisible),
 en utilisant un sémaphore. En l'absence de cette atomicité, des "data
