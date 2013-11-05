@@ -38,7 +38,7 @@ Comment maintenir l'état de l'application
 
 En REST, l'habitude est de garder l'état de l'application au niveau du client. Cela veut dire d'encoder l'état dans l'URI d'appel. Ce cas a déjà été vu lors de l'exercice sur l'AutomateRESTStateless.
 
-Cela peut également se faire par liens au sein du contenu (Cyprien sera ravi d'expliquer commme faire cela).
+Cela peut également se faire par liens au sein du contenu (Cyprien sera ravi d'expliquer comment faire cela).
 
 Comment implémenter des méthodes sûres et idempotentes
 ------------------------------------------------------
@@ -48,7 +48,7 @@ GET doit être une méthode sûre
 * méthode idempotente : méthode dont la réponse est la même à tous les coups
 GET, PUT et DELETE sont des méthodes idempotentes : elles peuvent être répétées (par exemple en cas de problème réseau) sans danger de corruption des données.
 
-La méthode DELETE est à part car théoriquement une ressource qui n'existe plus mais qui existait avant devrait renvoyer un 200, mais en pratique il est souvent difficile voir dangereux pour la sécurité de garder un historique des ressources supprimées, donc la convention actuelle est de renvoyer un 404 quand on essaye de supprimer une ressource qui n'existe plus. Cela contredit l'indempotence de DELETE.
+La méthode DELETE est à part car théoriquement une ressource qui n'existe plus mais qui existait avant devrait renvoyer un 200, mais en pratique il est souvent difficile voir dangereux pour la sécurité de garder un historique des ressources supprimées, donc la convention actuelle est de renvoyer un 404 quand on essaye de supprimer une ressource qui n'existe plus. Cela contredit l'idempotence de DELETE.
 
 
 Quand utiliser GET
