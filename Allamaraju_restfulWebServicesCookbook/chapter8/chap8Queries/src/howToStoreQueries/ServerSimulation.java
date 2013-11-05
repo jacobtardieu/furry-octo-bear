@@ -27,14 +27,11 @@ public class ServerSimulation implements Container {
          String[] s=path.getSegments();
         
          if(s.length>=1){ 
-        	 for(int i=0; i<s.length;i++){
-        		 System.out.println(s[i]);
-        	 }
         	 switch(s[0]){
 	         case "create": 
 	        	 if(s.length==1){
 		        	 int i=map.size();
-		        	 map.put("http://localhost:8080/created/"+i, "Page créée suite à la soumission d'un formulaire POST. Cette page est désormais accessible via GET est peut-être mise en cache. </br> L'uri correspondant est: "+"http://localhost:8080/created/"+i+" . </br> <form action='/create' method='post'><input type='hidden' name= 'test' value='test'><input type='submit' value='Request via POST'></form>");
+		        	 map.put("http://localhost:8080/created/"+i, "Page créée suite à la soumission d'un formulaire POST. Cette page est désormais accessible via GET et peut être mise en cache. </br> L'uri correspondant est: "+"http://localhost:8080/created/"+i+" . </br> <form action='/create' method='post'><input type='hidden' name= 'test' value='test'><input type='submit' value='Request via POST'></form>");
 		        	 System.out.println(map.toString());
 		        	 response.setValue("Content-Type", "text/html");
 			         response.setValue("Server", "HelloWorld/1.0 (Simple 4.0)");
@@ -50,6 +47,8 @@ public class ServerSimulation implements Container {
 	        	 else{
 	        		 response.setCode(404);
 	        		 response.setDescription("not found");
+	        		 body.println("404 not found");
+	        		 body.close();
 	        	 }
 		         break;
 	         case "created":
@@ -58,13 +57,15 @@ public class ServerSimulation implements Container {
 		         response.setDate("Date", time);
 		         response.setDate("Last-Modified", time);
 		         System.out.println(s.toString());
-		         if(s.length==2){
+		         if(s.length==2&&map.get("http://localhost:8080/created/"+s[1])!=null){
 		        	 body.println(map.get("http://localhost:8080/created/"+s[1]));
 			         body.close();
 		         }
 		         else{
 		        	 response.setCode(404);
 	        		 response.setDescription("not found");
+	        		 body.println("404 not found");
+	        		 body.close();
 		         }
 	        	 break;
 	        /* default:
