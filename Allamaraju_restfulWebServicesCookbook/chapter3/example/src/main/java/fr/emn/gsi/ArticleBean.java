@@ -4,6 +4,15 @@ package fr.emn.gsi;
 public class ArticleBean {
     private Integer id;
     private String name;
+    private String href;
+
+    public String getHref() {
+        return href;
+    }
+
+    public void setHref(String href) {
+        this.href = href;
+    }
 
     public Integer getId() {
         return id;
