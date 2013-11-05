@@ -1,0 +1,51 @@
+package restful;
+
+import java.util.HashMap;
+import java.util.Set;
+
+import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+
+import model.Famille;
+import model.Personne;
+
+public class FamilleService {
+	
+	HashMap<String,Famille> families = new HashMap<String,Famille>();
+	
+	public FamilleService() {
+		super();
+		HashMap<String,Personne> famille = new HashMap<String,Personne>();
+		Personne morticia = new Personne("Morticia", 53, "Femme");
+		famille.put("Morticia",morticia);
+		Personne gomez = new Personne("Gomez", 60, "Homme");
+		famille.put("Gomez",gomez);
+		Personne mercredi = new Personne("Mercredi", 15, "Femme");
+		famille.put("Mercredi",mercredi);
+		Personne pugsley = new Personne("Pugsley", 17, "Homme");
+		famille.put("Pugsley",pugsley);
+		Personne fetide = new Personne("Fetide", 55, "Homme");
+		famille.put("Fetide",fetide);
+		
+		families.put("ADAMS",new Famille("ADAMS",5, famille));
+	}
+
+	@GET
+	@Path("/{famillyName}")
+	@Produces("application/Json")
+	public Famille getFamily(@PathParam("famillyName") String familyName) {
+		return families.get(familyName);
+	}
+	
+	@GET
+	@Path("/{famillyName}/{personName}")
+	@Produces("application/Json")
+	public Personne getPersonne(@PathParam("famillyName") String familyName, @PathParam("personName") String personName){
+		return families.get(familyName).getFamilyMembers().get(personName);
+	}
+}
