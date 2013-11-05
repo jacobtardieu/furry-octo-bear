@@ -1,0 +1,11 @@
+ApacheKey : null ,Value : [HTTP/1.1 200 OK]Key : Transfer-Encoding ,Value : [chunked]Key : Vary ,Value : [Accept-Encoding,User-Agent]Key : Date ,Value : [Mon, 04 Nov 2013 18:05:55 GMT]Key : P3P ,Value : [CP='NOI DSP COR PSAo PSDo']Key : Set-Cookie ,Value : [layout=0; domain=.leboncoin.fr; path=/;, sq=ca=18_s&c=43; domain=.leboncoin.fr; path=/;, sq=ca=18_s&c=43; domain=.leboncoin.fr; path=/;, th=1; domain=.leboncoin.fr; path=/; expires=Thu, 01-Jan-1970 00:00:01 GMT;]Key : Content-Type ,Value : [text/html; charset=windows-1252]Key : Connection ,Value : [close]Key : Server ,Value : [Apache]
+ Server - ApacheKey : null ,Value : [HTTP/1.1 200 OK]
+Key : Transfer-Encoding ,Value : [chunked]
+Key : Vary ,Value : [Accept-Encoding,User-Agent]
+Key : Date ,Value : [Mon, 04 Nov 2013 18:07:18 GMT]
+Key : P3P ,Value : [CP='NOI DSP COR PSAo PSDo']
+Key : Set-Cookie ,Value : [layout=0; domain=.leboncoin.fr; path=/;, sq=ca=18_s&c=43; domain=.leboncoin.fr; path=/;, sq=ca=18_s&c=43; domain=.leboncoin.fr; path=/;, th=1; domain=.leboncoin.fr; path=/; expires=Thu, 01-Jan-1970 00:00:01 GMT;]
+Key : Content-Type ,Value : [text/html; charset=windows-1252]
+Key : Connection ,Value : [close]
+Key : Server ,Value : [Apache]
+Server - Apache
