@@ -5,7 +5,25 @@ Identification des ressources
 
 Aperçu
 ----------------------
-L'identification des ressources, c'est à dire qu'on conçoit un modèle pour présenter des ressources. Il y a 6 sujets à discuter.
+L'identification des ressources, c'est à dire qu'on conçoit un modèle pour présenter des ressources. Il y a 7 sujets à discuter.
+
+La structure d'URI
+----------------------
+cf : http://fr.wikipedia.org/wiki/Sch%C3%A9ma_d%27URI
+Chaque URI est constituée de quatre parties :
+
+    <nom du schéma> : <//[utilisateur@]partie hiérarchique[:porte]> [ ? <requête> ] [ # <fragment> ]
+
+Le nom du schéma est une lettre suivie de n'importe quelle combinaison de lettres, de chiffres, du signe plus (+), du point (.) ou d'un tiret (-) et se termine par deux points (:).
+
+La partie hiérarchique de l'URI est prévue pour contenir les informations d'identification de la ressource, hiérarchique par nature. En général, cette partie commence par un double slash (//), suivi par le domaine puis un chemin optionnel. 
+Le domaine est principalement constitué du nom d'hôte ou de l'adresse IP, cette information peut être encadrée par deux autres champs optionnels : avant, les informations concernant l'utilisateur délimitées par un @ ; après, un numéro de port, précédé par un deux-points (:).
+
+Le chemin est une séquence de segments (similaires à des répertoires), séparés par des slash (/). Chaque segment peut contenir des paramètres séparés par des points virgules (;), bien que cela soit rarement utilisé.
+
+La requête est une partie optionnelle séparée par un point d'interrogation qui contient des informations complémentaires qui ne sont pas de nature hiérarchique. Le format de la requête n'est pas défini de manière générale, mais est souvent formée d'une suite de paires <clef>=<valeur> séparées par des points virgules ou par des esperluettes.
+
+Le fragment est une partie optionnelle séparée par un dièse. Il fournit des informations supplémentaires permettant d'accéder à une ressource secondaire. Lorsque la ressource est un document HTML, le fragment est souvent l'id d'un élément et le navigateur fera le nécessaire pour que cet élément soit visible.
 
 Comment identifier les ressources réelles
 ----------------------
