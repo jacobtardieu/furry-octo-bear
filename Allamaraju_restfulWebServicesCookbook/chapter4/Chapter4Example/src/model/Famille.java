@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -12,12 +11,21 @@ public class Famille {
 	String familyName;
 	HashMap<String,Personne> familyMembers;
 	int size;
+	String link;
+	
+	public Famille(){
+		familyName = "";
+		familyMembers = new HashMap<String,Personne>();
+		size = 0;
+		link = "";
+	}
 	
 	public Famille(String familyName, int size, HashMap<String,Personne> familyMembers) {
 		super();
 		this.familyName = familyName;
 		this.familyMembers = familyMembers;
 		this.size = size;
+		this.link = "http://localhost:8080/REST/"+familyName;
 	}
 	
 	
@@ -33,6 +41,14 @@ public class Famille {
 	}
 
 
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
 
 	public String getFamilyName() {
 		return familyName;
