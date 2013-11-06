@@ -24,7 +24,7 @@ public class Personne {
 		this.age = age;
 		this.gender = gender;
 		this.familyName = familyName;
-		this.link = "http://localhost:8080/"+familyName+"/"+firstName;
+		this.link = "http://localhost:8080/REST/"+familyName+"/"+firstName;
 	}
 	public String getFirstName() {
 		return firstName;

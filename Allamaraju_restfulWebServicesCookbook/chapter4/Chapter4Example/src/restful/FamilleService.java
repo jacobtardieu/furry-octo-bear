@@ -69,7 +69,7 @@ public class FamilleService {
 	}
 	
 	@GET
-	@Path("/familly")
+	@Path("/familly_service")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getFamily2 (@QueryParam("famillyName") String familyName) {
 		return getFamily(familyName);

@@ -25,7 +25,7 @@ public class Famille {
 		this.familyName = familyName;
 		this.familyMembers = familyMembers;
 		this.size = size;
-		this.link = "http://localhost:8080/"+familyName;
+		this.link = "http://localhost:8080/REST/"+familyName;
 	}
 	
 	
