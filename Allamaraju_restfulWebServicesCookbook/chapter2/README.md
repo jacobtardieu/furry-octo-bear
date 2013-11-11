@@ -10,6 +10,7 @@ L'identification des ressources, c'est à dire qu'on conçoit un modèle pour pr
 La structure d'URI
 ----------------------
 cf : http://fr.wikipedia.org/wiki/Sch%C3%A9ma_d%27URI
+
 Chaque URI est constituée de quatre parties :
 
     <nom du schéma> : <//[utilisateur@]partie hiérarchique[:porte]> [ ? <requête> ] [ # <fragment> ]
