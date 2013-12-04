@@ -21,25 +21,39 @@ http://cxf.apache.org/core
 
 	<jaxrs:server id="testChap10" address="/">
 		<jaxrs:serviceBeans>
-			<ref bean="chap10Compteur" />
+			<ref bean="chap10registre" />
+			<ref bean="chap11service1" />
+			<ref bean="chap11service2" />
+			<ref bean="chap11catalogue" />
+			<ref bean="chap11bibliotheque" />
+
 		</jaxrs:serviceBeans>
 		<jaxrs:features>
 			<cxf:logging />
 		</jaxrs:features>
 		<jaxrs:providers>
-			<ref bean="transaction" />
-			<ref bean="cacheServeur" />
-			<ref bean="atomicite" />
+			<ref bean="chap10transaction" />
+			<ref bean="chap10cacheServeur" />
+			<ref bean="chap10atomicite" />
 
 		</jaxrs:providers>
 	</jaxrs:server>
 
-	<bean id="chap10Compteur" class="chap10.modele.Compteur" />
+	<bean id="chap10registre" class="chap10.modele.Registre" />
 
-	<bean id="transaction" class="chap10.infrastructure.RealiserTransactionOptimiste" />
+	<bean id="chap10transaction" class="chap10.infrastructure.jaxrs.RealiserTransactionOptimiste" />
 
-	<bean id="cacheServeur" class="chap10.infrastructure.Cacher" />
+	<bean id="chap10cacheServeur" class="chap10.infrastructure.jaxrs.Cacher" />
 
-	<bean id="atomicite" class="chap10.infrastructure.InteragirAtomiquement" />
+	<bean id="chap10atomicite" class="chap10.infrastructure.jaxrs.InteragirAtomiquement" />
+	
+	<bean id="chap11service1" class="chap11.modele.ImplemService1" />
+	
+	<bean id="chap11service2" class="chap11.modele.ImplemService2" />
+	
+	<bean id="chap11catalogue" class="chap11.modele.ImplemCatalogue" />
+
+	<bean id="chap11bibliotheque" class="chap11.modele.ImplemBibliotheque" />
+
 </beans>
 

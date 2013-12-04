@@ -1,4 +1,4 @@
-package chap10.infrastructure.annotations;
+package chap10.infrastructure.jaxrs.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
@@ -9,6 +9,6 @@ import javax.ws.rs.NameBinding;
 @NameBinding
 @Target({ ElementType.TYPE, ElementType.METHOD })
 @Retention(value = RetentionPolicy.RUNTIME)
-public @interface VersionCompteur {
+public @interface AtomiciteRequeteReponseServeur {
 
 }

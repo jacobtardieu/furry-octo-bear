@@ -1,4 +1,4 @@
-package chap10.infrastructure;
+package chap10.infrastructure.jaxrs;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MultivaluedMap;
 import javax.ws.rs.ext.Provider;
 
-import chap10.infrastructure.annotations.VersionCompteur;
+import chap10.infrastructure.jaxrs.annotations.VersionCompteur;
 
 @Provider
 @VersionCompteur

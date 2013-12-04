@@ -6,12 +6,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import chap10.infrastructure.annotations.AtomiciteRequeteReponseServeur;
-import chap10.infrastructure.annotations.CacheServeur;
-import chap10.infrastructure.annotations.VersionCompteur;
+import chap10.infrastructure.jaxrs.annotations.AtomiciteRequeteReponseServeur;
+import chap10.infrastructure.jaxrs.annotations.CacheServeur;
+import chap10.infrastructure.jaxrs.annotations.VersionCompteur;
 
-@Path("compteur")
-public interface ServiceCompteur {
+@Path("registre")
+public interface ServiceRegistre {
 	@AtomiciteRequeteReponseServeur
 	@CacheServeur
 	@VersionCompteur

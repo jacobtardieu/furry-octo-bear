@@ -1,4 +1,4 @@
-package chap10.infrastructure;
+package chap10.infrastructure.jaxrs;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import javax.ws.rs.BindingPriority;
 
-import chap10.infrastructure.annotations.CacheServeur;
+import chap10.infrastructure.jaxrs.annotations.CacheServeur;
 
 @Provider
 @CacheServeur
@@ -24,7 +24,7 @@ public class Cacher implements ContainerRequestFilter, ContainerResponseFilter {
 	public Cacher() {
 		cache = null;
 		System.out
-				.println("Intercepteur initialisé de type " + this.getClass());
+				.println("Initialisation du filtre de type " + this.getClass());
 	}
 
 	@Override

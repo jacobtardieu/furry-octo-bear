@@ -1,4 +1,4 @@
-package chap10.infrastructure;
+package chap10.infrastructure.jaxrs;
 
 import java.io.IOException;
 import java.util.concurrent.Semaphore;
@@ -10,7 +10,7 @@ import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
 import javax.ws.rs.BindingPriority;
 
-import chap10.infrastructure.annotations.AtomiciteRequeteReponseServeur;
+import chap10.infrastructure.jaxrs.annotations.AtomiciteRequeteReponseServeur;
 
 @Provider
 @AtomiciteRequeteReponseServeur
@@ -23,7 +23,7 @@ public class InteragirAtomiquement implements ContainerRequestFilter,
 	public InteragirAtomiquement() {
 		verrou = new Semaphore(1, true);
 		System.out
-				.println("Intercepteur initialisé de type " + this.getClass());
+				.println("Initialisation du filtre de type " + this.getClass());
 	}
 
 	@Override

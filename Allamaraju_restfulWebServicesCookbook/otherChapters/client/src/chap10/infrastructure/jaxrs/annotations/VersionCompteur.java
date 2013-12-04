@@ -1,4 +1,4 @@
-package chap10.infrastructure.annotations;
+package chap10.infrastructure.jaxrs.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

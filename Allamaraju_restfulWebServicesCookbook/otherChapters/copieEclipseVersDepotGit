@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# usage: copieEclipseVersDepotGit "chapX"
+
+serveur=/home/hgrall/Public/espacesEclipse/gsi14_soc/RestfulWebServicesCookBook
+client=/home/hgrall/Public/espacesEclipse/gsi14_soc/RestfulWebServicesCookBook_Client
+
+cp -Rv $serveur/src/$1 serveur/src/
+cp -Rv $client/src/$1 client/src/
+
+git add serveur/src/$1/\*.java
+git add client/src/$1/\*.java
+
+cp -v $serveur/WebContent/WEB-INF/web.xml serveur/WEB-INF
+cp -v $serveur/WebContent/WEB-INF/restful-beans.xml serveur/WEB-INF
+
+git add serveur/WEB-INF/web.xml
+git add serveur/WEB-INF/restful-beans.xml

@@ -1,15 +1,15 @@
 package chap10.modele;
 
 
-public class Compteur implements ServiceCompteur {
+public class Registre implements ServiceRegistre {
 
 	private Ressource n;
 	
-	public Compteur() {
+	public Registre() {
 		this(new Ressource(0));
 	}
 
-	public Compteur(Ressource i) {
+	public Registre(Ressource i) {
 		System.out.println("Initialisation du compteur de type " + this.getClass());
 		n = new Ressource(i.getI());
 	}

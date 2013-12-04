@@ -1,4 +1,4 @@
-package chap10.infrastructure;
+package chap10.infrastructure.jaxrs;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import javax.ws.rs.BindingPriority;
 
-import chap10.infrastructure.annotations.VersionCompteur;
+import chap10.infrastructure.jaxrs.annotations.VersionCompteur;
 
 @Provider
 @VersionCompteur
@@ -26,7 +26,7 @@ public class RealiserTransactionOptimiste implements ContainerRequestFilter,
 	public RealiserTransactionOptimiste() {
 		version = 1;
 		System.out
-				.println("Intercepteur initialisé de type " + this.getClass());
+				.println("Initialisation du filtre de type " + this.getClass());
 	}
 
 	@Override
@@ -52,11 +52,13 @@ public class RealiserTransactionOptimiste implements ContainerRequestFilter,
 			String versionServeur = String.valueOf(version);
 			if (!versionClient.equals(versionServeur)) {
 				Response.StatusType statut = Response.Status.PRECONDITION_FAILED;
-				requete.abortWith(Response.noContent().status(statut).build());
-				System.out.println("*** Transaction à reprendre ("
+				String msgErreur = "Transaction à reprendre ("
 						+ Response.Status.PRECONDITION_FAILED.getStatusCode()
 						+ " - version client : " + versionClient
-						+ " - version serveur : " + versionServeur + ") ***");
+						+ " - version serveur : " + versionServeur + ")";
+				Response rep = Response.status(statut).entity(msgErreur).build();
+				requete.abortWith(rep);
+				System.out.println("*** " + msgErreur + " ***");
 				return;
 			}
 			this.version++;
